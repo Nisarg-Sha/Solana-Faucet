@@ -58,7 +58,7 @@ export default function AirdropCard() {
     try {
       setLoading(true);
       const connection = new Connection(
-        "https://solana-devnet.g.alchemy.com/v2/BTecSBlOUfsLdqrEjbfGI9rlPZb4yZaB",
+        "process.env.ALCHEMY_API_KEY",
         'confirmed'
       );
       const publicKey = new PublicKey(walletAddress);
