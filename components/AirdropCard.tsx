@@ -50,15 +50,10 @@ export default function AirdropCard() {
   };
 
   const handleAirdrop = async () => {
-    if (!walletAddress) {
-      toast.error('Please enter a valid wallet address');
-      return;
-    }
-
     try {
       setLoading(true);
       const connection = new Connection(
-        "process.env.ALCHEMY_API_KEY",
+        `https://solana-devnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
         'confirmed'
       );
       const publicKey = new PublicKey(walletAddress);
